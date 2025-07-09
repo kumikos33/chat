@@ -4,7 +4,7 @@ import { MOCK_CHAT } from "~/composables/mockData";
 export default function useChat() {
   // Initialize chat with mock data
   const chat = ref<Chat>(MOCK_CHAT);
-  const messages = computed(() => chat.value.messages);
+  const messages = computed<ChatMessage[]>(() => chat.value.messages);
 
   function createMessage(message: string, role: ChatMessage["role"]) {
     const id = messages.value.length.toString();
