@@ -16,23 +16,18 @@ export default function useChat() {
     };
   }
 
-  function sendMessage(message: string) {
+  async function sendMessage(message: string) {
     messages.value.push(createMessage(message, "user"));
 
-    setTimeout(() => {
-      messages.value.push(createMessage(`You said: ${message}`, "assistant"));
-    }, 200);
-  }
+    const data = await $fetch<ChatMessage>("/api/ai", {
+      method: "POST",
+      body: {
+        messages: messages.value,
+      },
+    });
 
-  // Function to add a new message to the chat
-  // function addMessage(role: "user" | "assistant", content: string) {
-  //   const newMessage: ChatMessage = {
-  //     id: (chat.value.messages.length + 1).toString(),
-  //     role,
-  //     content,
-  //   };
-  //   chat.value.messages.push(newMessage);
-  // }
+    messages.value.push(data);
+  }
 
   return {
     chat,
