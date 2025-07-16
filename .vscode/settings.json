@@ -4,9 +4,10 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // "files.associations": {
-  //   "*.css": "tailwindcss"
-  // },
+  "eslint.enable": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "editor.quickSuggestions": {
     "strings": "on"
   }

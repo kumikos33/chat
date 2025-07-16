@@ -2,6 +2,8 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event);
   const { messages } = body;
 
+  console.log(useRuntimeConfig());
+
   const id = messages.length.toString();
   const lastMessage = messages[messages.length - 1];
 
