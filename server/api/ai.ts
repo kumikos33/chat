@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const { messages } = body;
 
   const id = messages.length.toString();
-  const lastMessages = messages[messages.length - 1];
+  // const lastMessages = messages[messages.length - 1];
 
   const openaiApiKey = useRuntimeConfig().openaiApiKey;
   const openaiModel = createOpenAIModel(openaiApiKey);
