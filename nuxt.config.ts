@@ -11,13 +11,13 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxtjs/mdc"],
 
   runtimeConfig: {
-    openaiAPIKey: "",
+    openaiAPIKey: process.env.OPENAI_API_KEY,
   },
 
   mdc: {
     highlight: {
       theme: "material-theme-palenight",
-      langs: ["html", "markdown", "vue", "typescript", "javascript"],
+      langs: ["html", "markdown", "vue", "typescript", "javascript", "bash"],
     },
   },
 });
