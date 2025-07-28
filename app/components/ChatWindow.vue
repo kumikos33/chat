@@ -21,7 +21,7 @@ watch(() => props.messages, pinToBottom, { deep: true });
 <template>
   <div ref="scrollContainer" class="scroll-container">
     <UContainer class="chat-container">
-      <div v-if="!messages.length" class="empty-state">
+      <div v-if="!messages?.length" class="empty-state">
         <div class="empty-state-card">
           <h2 class="empty-state-title">Start your chat</h2>
           <ChatInput @send-message="handleSendMessage" />
@@ -48,6 +48,7 @@ watch(() => props.messages, pinToBottom, { deep: true });
               <MarkdownRenderer :content="message.content" />
             </div>
           </div>
+
           <span v-if="typing" class="typing-indicator"> &#9611; </span>
         </div>
 
@@ -63,8 +64,9 @@ watch(() => props.messages, pinToBottom, { deep: true });
             />
           </div>
           <ChatInput @send-message="handleSendMessage" />
-        </div> </template
-    ></UContainer>
+        </div>
+      </template>
+    </UContainer>
   </div>
 </template>
 
