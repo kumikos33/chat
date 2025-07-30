@@ -7,6 +7,6 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    openaiApiKey: "",
+    openaiAPIKey: process.env.OPENAI_API_KEY,
   },
 });
