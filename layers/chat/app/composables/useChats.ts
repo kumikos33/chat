@@ -3,7 +3,7 @@ export default function useChats() {
     data: chats,
     execute,
     status,
-  } = useAsyncData<Chat[]>("chats", () => $fetch<Chat[]>("/api/chats"), {
+  } = useFetch<Chat[]>("/api/chats", {
     immediate: false,
     default: () => [],
   });
